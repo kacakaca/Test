@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package info;
+
+import "google/protobuf/empty.proto";
+
+service Manager {
+    rpc AddRecord (Person) returns (google.protobuf.Empty) {}
+    rpc DeleteRecords (stream ReqName) returns (google.protobuf.Empty) {}
+    rpc GetRecordsByAge (AgeRange) returns (stream Person) {}
+    rpc GetRecordsByNames (stream ReqName) returns (stream Person) {}
+}
+
+message Person {
+    string name = 1;
+    int32 age = 2;
+    string email = 3;
+}
+
+message AgeRange {
+    int32 minimal = 1;
+    int32 maximal = 2;
+}
+
+message ReqName {
+    string name = 1;
+}
