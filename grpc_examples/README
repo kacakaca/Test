@@ -1,0 +1,4 @@
+- 可在ubuntu上成功执行(需要安装grpc)，执行`make`后生成可执行文件`server`和`client`。然后分别在不同的terminal运行`./server`和`./client`。
+- service定义的information.proto中
+- server的实现在server.cc中
+- client的实现在client.cc中
